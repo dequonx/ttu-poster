@@ -1,3 +1,4 @@
+import Link from '@components/Link';
 import Image from 'next/image';
 import React, { useEffect } from 'react';
 const smartquotes = require('smartquotes');
@@ -6,7 +7,7 @@ const prosAndCons = [
   {
     name: 'qBittorrent',
     license: 'GPL-2.0-or-later',
-    pros: ['Lightweight', 'Fast', 'No bundled software', 'No advertisements'],
+    pros: ['Lightweight', 'Fast', 'No bundled software', 'No ads'],
     cons: ['No web-based interface'],
     platforms: ['FreeBSD', 'Linux', 'macOS', 'OS/2', 'Windows']
   },
@@ -21,21 +22,21 @@ const prosAndCons = [
     name: 'Deluge',
     license: 'GPL-3.0-or-later',
     pros: ['Cross-platform', 'Plugins', 'Browser integration', 'Simple interface'],
-    cons: ['UI is a bit too sparse'],
+    cons: ['Sparse user interface'],
     platforms: ['FreeBSD', 'Linux', 'macOS', 'Windows']
   },
   {
     name: 'Vuze',
     license: 'GPL-2.0',
     pros: ['Clear user interface', 'Plugins'],
-    cons: ['Contains ads', 'Antivirus trial bundled'],
+    cons: ['Contains ads'],
     platforms: ['Any OS that runs Java']
   },
   {
     name: 'µTorrent',
     license: 'Proprietary (Adware)',
     pros: ['Free (as in "free beer")', 'Very small size', 'Runs on the web'],
-    cons: ['Many inappropriate ads', '(Had) a crypto miner'],
+    cons: ['Inappropriate ads', 'Had a crypto miner'],
     platforms: ['Android', 'Linux', 'Windows', 'macOS']
   }
 ];
@@ -87,28 +88,28 @@ export default function Home() {
           <p>
             <table className="tw-border-2 tw-border-collapse tw-w-full tw-table-fixed tw-text-sm">
               <tr>
-                <th className="tw-border-2 tw-p-2 tw-w-2/12">Name</th>
-                <th className="tw-border-2 tw-p-2 tw-w-2/12">License</th>
-                <th className="tw-border-2 tw-p-2 tw-w-4/12">Advantages</th>
-                <th className="tw-border-2 tw-p-2 tw-w-4/12">Disadvantages</th>
-                <th className="tw-border-2 tw-p-2 tw-w-2/12">Platforms Supported</th>
+                <th className="tw-border-2 tw-p-1 tw-w-2/12">Name</th>
+                <th className="tw-border-2 tw-p-1 tw-w-2/12">License</th>
+                <th className="tw-border-2 tw-p-1 tw-w-3/12">Advantages</th>
+                <th className="tw-border-2 tw-p-1 tw-w-3/12">Disadvantages</th>
+                <th className="tw-border-2 tw-p-1 tw-w-2/12">Platforms</th>
               </tr>
               {prosAndCons.map((value, index) => {
                 return (
                   <tr key={index.toString() + 1}>
-                    <td className="tw-border-2 tw-p-2 tw-italic">{value.name}</td>
-                    <td className="tw-border-2 tw-p-2">{value.license}</td>
-                    <td className="tw-border-2 tw-p-2">
+                    <td className="tw-border-2 tw-p-1 tw-text-center tw-italic">{value.name}</td>
+                    <td className="tw-border-2 tw-p-1 tw-text-center">{value.license}</td>
+                    <td className="tw-border-2 tw-px-2">
                       {value.pros.map((pro, idx) => {
                         return <li key={idx.toString() + 1}>{pro}</li>;
                       })}
                     </td>
-                    <td className="tw-border-2 tw-p-2">
+                    <td className="tw-border-2 tw-px-2">
                       {value.cons.map((con, idx) => {
                         return <li key={idx.toString() + 1}>{con}</li>;
                       })}
                     </td>
-                    <td className="tw-border-2 tw-p-2 tw-italic">
+                    <td className="tw-border-2 tw-p-1 tw-italic tw-text-center">
                       {value.platforms.sort().join(', ')}
                     </td>
                   </tr>
@@ -145,10 +146,16 @@ export default function Home() {
                 exit node in order to use the network.
               </small>
               <small className="tw-block">
-                3. A Virtual Private Network is a network where entities communicate with each other
-                through a third-party, securing confidentiality and privacy.
+                3. A <i>Virtual Private Network</i> is a network where entities communicate with
+                each other through a third-party for confidentiality and user privacy.
               </small>
             </p>
+          </p>
+          <p>
+            <small>Source code: </small>
+            <Link href="https://github.com/dequonx/ttu-poster.git">
+              <code>https://github.com/dequonx/ttu-poster.git</code>
+            </Link>
           </p>
         </div>
         <div className="tw-col-span-3">
@@ -166,13 +173,13 @@ export default function Home() {
             which proved effective. A token economy would create a positive cycle from which
             everyone benefits. Intermediary/exit node providers would gain profit from the increase
             of token value; yet there is nothing the users have to pay for. Ours would be similar to
-            this, except that we are going to back the coins with real value.
+            this, except that we are backing the coins with real value.
           </p>
           <p>
-            The real value will be profit gained from providing advertisement without a middleman
-            surveiling upon the users. Advertisement will not change rapidly as that of YouTube; it
-            will be static images, downloaded via Tor or some other anonymous web protocol, placed
-            somewhere in the application.
+            The real value will be profit gained from providing advertisement. Advertisement will
+            not change rapidly as that of YouTube; it will be static images, downloaded via Tor or
+            some other anonymous web protocol, placed somewhere in the application. No middleman, no
+            tracking, no surveillance upon the users.
           </p>
           <p>
             Moreover, there shall be an automatic bid system, where advertisers compete for the most
