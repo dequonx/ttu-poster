@@ -48,24 +48,24 @@ export default function Home() {
   return (
     <main className="tw-flex tw-flex-col tw-w-full tw-min-h-screen tw-p-8 tw-border-b-2">
       <div
-        className="tw-font-extrabold tw-text-5xl tw-tracking-tight tw-text-black tw-mb-8"
+        className="tw-mb-8 tw-text-5xl tw-font-extrabold tw-tracking-tight tw-text-black"
         style={{ fontFamily: 'Mija' }}
       >
         An Anonymity-First Approach to Decentralized Torrenting and File Sharing
       </div>
       <div
-        className="tw-font-extrabold tw-text-3xl tw-tracking-tight tw-text-black tw-mb-8"
+        className="tw-mb-8 tw-text-3xl tw-font-extrabold tw-tracking-tight tw-text-black"
         style={{ fontFamily: 'Mija' }}
       >
         A Torrent-Inspired Protocol with Incentivized Onion Routing
       </div>
       <div
-        className="tw-font-extrabold tw-text-xl tw-tracking-tight tw-mb-4 tw-flex tw-flex-row tw-justify-end"
+        className="tw-flex tw-flex-row tw-justify-end tw-mb-4 tw-text-xl tw-font-extrabold tw-tracking-tight"
         style={{ fontFamily: 'Mija' }}
       >
         10121 Jiwu Jang, 10144 Juha Cho
       </div>
-      <div className="tw-grid tw-grid-flow-col tw-gap-x-10 tw-grid-cols-5">
+      <div className="tw-grid tw-grid-flow-col tw-grid-cols-5 tw-gap-x-10">
         <div className="tw-col-span-2">
           <p>
             <h1>The problem.</h1>
@@ -86,30 +86,30 @@ export default function Home() {
             platforms it can be run.
           </p>
           <p>
-            <table className="tw-border-2 tw-border-collapse tw-w-full tw-table-fixed tw-text-sm">
+            <table className="tw-w-full tw-text-sm tw-border-2 tw-border-collapse tw-table-fixed">
               <tr>
-                <th className="tw-border-2 tw-p-1 tw-w-2/12">Name</th>
-                <th className="tw-border-2 tw-p-1 tw-w-2/12">License</th>
-                <th className="tw-border-2 tw-p-1 tw-w-3/12">Advantages</th>
-                <th className="tw-border-2 tw-p-1 tw-w-3/12">Disadvantages</th>
-                <th className="tw-border-2 tw-p-1 tw-w-2/12">Platforms</th>
+                <th className="tw-w-2/12 tw-p-1 tw-border-2">Name</th>
+                <th className="tw-w-2/12 tw-p-1 tw-border-2">License</th>
+                <th className="tw-w-3/12 tw-p-1 tw-border-2">Advantages</th>
+                <th className="tw-w-3/12 tw-p-1 tw-border-2">Disadvantages</th>
+                <th className="tw-w-2/12 tw-p-1 tw-border-2">Platforms</th>
               </tr>
               {prosAndCons.map((value, index) => {
                 return (
                   <tr key={index.toString() + 1}>
-                    <td className="tw-border-2 tw-p-1 tw-text-center tw-italic">{value.name}</td>
-                    <td className="tw-border-2 tw-p-1 tw-text-center">{value.license}</td>
-                    <td className="tw-border-2 tw-px-2">
+                    <td className="tw-p-1 tw-italic tw-text-center tw-border-2">{value.name}</td>
+                    <td className="tw-p-1 tw-text-center tw-border-2">{value.license}</td>
+                    <td className="tw-px-2 tw-border-2">
                       {value.pros.map((pro, idx) => {
                         return <li key={idx.toString() + 1}>{pro}</li>;
                       })}
                     </td>
-                    <td className="tw-border-2 tw-px-2">
+                    <td className="tw-px-2 tw-border-2">
                       {value.cons.map((con, idx) => {
                         return <li key={idx.toString() + 1}>{con}</li>;
                       })}
                     </td>
-                    <td className="tw-border-2 tw-p-1 tw-italic tw-text-center">
+                    <td className="tw-p-1 tw-italic tw-text-center tw-border-2">
                       {value.platforms.sort().join(', ')}
                     </td>
                   </tr>
@@ -204,27 +204,26 @@ export default function Home() {
             />
             For a reasonable amount of security, the protocol uses basic encryption algorithms such
             as RSA-1024, AES-256, and Diffie-Hellman Key Exchange. Intermediary nodes operate within
-            the same client, meaning every feature is embedded in the client. They relay
-            information, yet they cannot know what is inside, and/or who has sent the data, by the
-            very nature of Onion Routing. Since it uses a tweaked version of Onion Routing, it does
-            not blindly choose any nodes for relaying; it chooses nodes that have a decent speed and
-            are in a close-enough location.
+            the same client, meaning every feature is embedded inside the client. They relay
+            information, yet they do not know what is inside and who sent the data, by the very
+            nature of Onion Routing. The protocol uses a tweaked version of Onion Routing, so it
+            does not blindly choose any nodes for relaying; rather, it chooses nodes with a decent
+            speed and within a certain distance.
           </p>
           <p>
-            Moreover, there is no such thing as a centralized server in this protocol.
-            Advertisements do not come from a central source of authority; rather, it is a result of
-            a bid within clients (advertisers use the client as well) that have participated in the
-            process.
+            Moreover, there is no such thing as a central server in this protocol. Advertisements do
+            not come from a central source of authority; rather, it is a result of a bid within
+            clients (advertisers use the client as well) that have participated in the process.
           </p>
           <p>
             <h1>Conclusion.</h1>
             On this basis, we conclude that a sophisticated protocol using an internal
-            cryptocurrency as well as an anonymous advertisement system is sufficient for a
-            sustainable protocol for maintaining anonymity in terms of torrenting. Implementation
-            details are deliberately left blank since they are to change. Further research should
-            consider implementing the protocol with a fast programming language such as C++ or Rust,
-            and measuring the efficacy of the protocol in various aspects such as user
-            inflow/outflow, financial stability, and practical anonymity.
+            cryptocurrency and an anonymous advertisement system is sufficient for a sustainable
+            protocol for maintaining anonymity in terms of torrenting. Implementation details are
+            deliberately left blank since they are to change. Further research should consider
+            implementing the protocol with a fast programming language such as C++ or Rust, and
+            measuring the efficacy of the protocol in various aspects such as user inflow/outflow,
+            financial stability, and practical anonymity.
           </p>
         </div>
       </div>
