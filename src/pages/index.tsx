@@ -1,3 +1,4 @@
+import Image from 'next/image';
 import React, { useEffect } from 'react';
 const smartquotes = require('smartquotes');
 
@@ -64,7 +65,7 @@ export default function Home() {
         10121 Jiwu Jang, 10144 Juha Cho
       </div>
       <div className="tw-grid tw-grid-flow-col tw-gap-x-10 tw-grid-cols-5">
-        <div className="tw-col-span-3">
+        <div className="tw-col-span-2">
           <p>
             <h1>The problem.</h1>
             <i>Torrenting</i>—a method in which users voluntarily "seed" sources and share them by
@@ -150,7 +151,7 @@ export default function Home() {
             </p>
           </p>
         </div>
-        <div className="tw-col-span-2">
+        <div className="tw-col-span-3">
           <p>
             <h1>The idea.</h1>
             Therefore, summing up the ideas previously listed, the protocol should encompass a
@@ -186,6 +187,37 @@ export default function Home() {
           <p>
             <h1>The method.</h1>
             So, the diagram below shows how the system works in essence:
+            <Image
+              alt="Diagram of the System"
+              src="/static/diagram.svg"
+              width="100%"
+              height="75%"
+              layout="responsive"
+              objectFit="contain"
+            />
+            For a reasonable amount of security, the protocol uses basic encryption algorithms such
+            as RSA-1024, AES-256, and Diffie-Hellman Key Exchange. Intermediary nodes operate within
+            the same client, meaning every feature is embedded in the client. They relay
+            information, yet they cannot know what is inside, and/or who has sent the data, by the
+            very nature of Onion Routing. Since it uses a tweaked version of Onion Routing, it does
+            not blindly choose any nodes for relaying; it chooses nodes that have a decent speed and
+            are in a close-enough location.
+          </p>
+          <p>
+            Moreover, there is no such thing as a centralized server in this protocol.
+            Advertisements do not come from a central source of authority; rather, it is a result of
+            a bid within clients (advertisers use the client as well) that have participated in the
+            process.
+          </p>
+          <p>
+            <h1>Conclusion.</h1>
+            On this basis, we conclude that a sophisticated protocol using an internal
+            cryptocurrency as well as an anonymous advertisement system is sufficient for a
+            sustainable protocol for maintaining anonymity in terms of torrenting. Implementation
+            details are deliberately left blank since they are to change. Further research should
+            consider implementing the protocol with a fast programming language such as C++ or Rust,
+            and measuring the efficacy of the protocol in various aspects such as user
+            inflow/outflow, financial stability, and practical anonymity.
           </p>
         </div>
       </div>
