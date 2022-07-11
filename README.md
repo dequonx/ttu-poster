@@ -1,5 +1,1 @@
-# T.E.A.M.의 TTU의 포스터 (포스터의 TTU의 T.E.A.M.)
-
-이게 된다고? Eh?
-
-껄껄.. 그렇습니다만...
+# An anonymous torrent protocol.
