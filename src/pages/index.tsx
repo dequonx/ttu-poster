@@ -1,5 +1,5 @@
-import Link from '@components/Link';
 import Image from 'next/image';
+import { QRCodeSVG } from 'qrcode.react';
 import React, { useEffect } from 'react';
 const smartquotes = require('smartquotes');
 
@@ -152,10 +152,20 @@ export default function Home() {
             </p>
           </p>
           <p>
-            <small>Source code: </small>
-            <Link href="https://github.com/dequonx/ttu-poster.git">
-              <code>https://github.com/dequonx/ttu-poster.git</code>
-            </Link>
+            <div className="tw-grid tw-grid-flow-row tw-grid-cols-5">
+              <div className="tw-col-span-2">
+                <code>
+                  Did you know that this poster is made out of TypeScript code? Source code for the
+                  poster {'->'}
+                </code>
+              </div>
+              <QRCodeSVG
+                className="tw-col-span-3"
+                href="https://github.com/dequonx/ttu-poster.git"
+                value="https://github.com/dequonx/ttu-poster.git"
+                height="7rem"
+              ></QRCodeSVG>
+            </div>
           </p>
         </div>
         <div className="tw-col-span-3">
